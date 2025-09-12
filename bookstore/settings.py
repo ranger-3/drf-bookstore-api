@@ -50,6 +50,7 @@ REMOTE_APPS = [
 LOCAL_APPS = [
     "apps.users",
     "apps.books",
+    "apps.authors",
 ]
 
 INSTALLED_APPS = [
@@ -114,10 +115,7 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": (
-            (
-                "django.contrib.auth.password_validation."
-                "UserAttributeSimilarityValidator"
-            ),
+            "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
         ),
     },
     {
