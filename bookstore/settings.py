@@ -44,6 +44,7 @@ STD_APPS = [
 
 REMOTE_APPS = [
     "rest_framework",
+    "drf_spectacular",
 ]
 
 LOCAL_APPS = [
@@ -56,6 +57,15 @@ INSTALLED_APPS = [
     *REMOTE_APPS,
     *LOCAL_APPS,
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "SCHEMA_PATH_PREFIX": "/api/v[0-9]",
+    "COMPONENT_SPLIT_REQUEST": True,
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
