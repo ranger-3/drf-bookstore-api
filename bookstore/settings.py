@@ -48,6 +48,7 @@ REMOTE_APPS = [
 
 LOCAL_APPS = [
     "apps.users",
+    "apps.books",
 ]
 
 INSTALLED_APPS = [
