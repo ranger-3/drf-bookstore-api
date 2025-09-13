@@ -3,9 +3,14 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    debug: bool = False
     secret_key: SecretStr
 
-    debug: bool = False
+    db_name: str
+    db_user: str
+    db_password: SecretStr
+    db_host: str
+    db_port: int
 
     model_config = SettingsConfigDict(env_file=".env")
 
