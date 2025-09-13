@@ -37,6 +37,6 @@ COPY --chown=node --from=build ${WORKDIR_PATH} ${WORKDIR_PATH}
 ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
 
 
-ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["gunicorn", "bookstore.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "2"]
 
 EXPOSE 8000
