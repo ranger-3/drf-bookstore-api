@@ -3,8 +3,17 @@ name: Lint & Format with Ruff
 on:
   pull_request:
     branches: [main]
+    paths:
+      - bookstore/**
+      - apps/**
+      - "!**/migrations/**"
+
   push:
     branches: [main]
+    paths:
+      - bookstore/**
+      - apps/**
+      - "!**/migrations/**"
 
 jobs:
   ruff:
