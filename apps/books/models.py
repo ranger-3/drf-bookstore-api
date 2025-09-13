@@ -16,3 +16,10 @@ class Book(BaseModel):
         blank=True,
         validators=[validate_isbn],
     )
+    author = models.ForeignKey(
+        "authors.Author",
+        related_name="books",
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+    )
