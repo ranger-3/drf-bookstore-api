@@ -1,0 +1,12 @@
+*
+
+!pyproject.toml
+!uv.lock
+
+!.python-version
+
+!manage.py
+!bookstore/
+!apps/
+
+**/__pycache__/
