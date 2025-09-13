@@ -37,6 +37,6 @@ COPY --chown=node --from=build ${WORKDIR_PATH} ${WORKDIR_PATH}
 ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
 
 
-ENTRYPOINT ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 EXPOSE 8000

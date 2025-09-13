@@ -5,6 +5,14 @@ services:
     ports:
       - 8000:8000
     depends_on:
+      bookstore-migrations:
+        condition: service_completed_successfully
+
+  bookstore-migrations:
+    build: .
+    env_file: ".env"
+    entrypoint: ["python3", "manage.py", "migrate"]
+    depends_on:
       - db
 
   db:
